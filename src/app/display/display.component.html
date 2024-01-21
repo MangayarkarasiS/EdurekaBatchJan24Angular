@@ -1,0 +1,16 @@
+<h2>I am a Body builder</h2>
+
+<!--<img src="\assets\workout.webp" class="rounded-circle mx-auto d-block" height="100px" width="100px" />
+-->
+<img [src]="imagePath" height="100px" width="100px"/>
+<h2>Value displayed using string interpolation</h2>
+<h3>BookName : {{BookName}}</h3>
+
+<h2>Value displayed in textbox using string interpolation</h2>
+<input type="text" class="text-primary" value="{{BookName}}"/>
+<br>
+<h2>Value displayed in textbox using property binding</h2>
+<input type="text" class="text-warning" [value]="BookName"/>
+
+<button type="button" class="btn btn-success" (click)="ChangeBook()">change BookName</button>
+

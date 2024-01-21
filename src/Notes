@@ -1,0 +1,14 @@
+How to create a component:
+
+1st way:
+
+1. login.component.ts
+2. login.component.html
+3. login.component.css
+4. login.component.spec.
+5. import it in appmodule.ts
+6. add it in app.component.ts - root component
+
+2nd way:
+
+ng generate component login 

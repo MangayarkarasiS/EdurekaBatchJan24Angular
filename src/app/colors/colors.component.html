@@ -1,0 +1,18 @@
+
+<div class="container">
+    <h1>colors works!</h1>
+<ul class="list-group">
+    <li class="list-group-items" *ngFor="let color of allColors;let i=index;">
+        <!--<span *ngIf="!toggleEdit">
+            {{color}} -
+        </span>
+        <span *ngIf="toggleEdit">
+          <input type="text" [(ngModel)]="changeColor"/>
+        </span>
+        <button type="button" class="btn btn-danger" (click)="removeColor(color)">Remove</button>
+        <button type="button" class="btn btn-warning" *ngIf="!toggleEdit" (click)="editColor(i,color)">Edit</button>
+        <button type="button" class="btn btn-warning" *ngIf="toggleEdit" (click)="editColor(i,color)">Update</button></li>-->
+    
+        <app-childcolor [printColor]="color" (deleteEventEmitter)="removeColor($event)"></app-childcolor>
+</ul>
+</div>
