@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Todo List</h2>
+    <input type="text" class="form-control" 
+      placeholder="Enter To do items" [(ngModel)]="todoItem" (change)="addTodoItem()"/>
+    <ul class="list-group">
+        <li @myFade class="list-group-items" 
+        *ngFor="let todo of allTodo"
+        (click)="removeTodo(todo)">
+        {{todo}}</li>
+    </ul>
+</div>

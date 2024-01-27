@@ -1,5 +1,8 @@
 <div class="container">
     <h2>List of Students</h2>
+    <div class="form-group m-3">
+      <input type="text" class="form-control" 
+      placeholder="Search by Gender" [(ngModel)]="filterData"/>
     <table class="table table-striped">
       <thead class="table-dark text-white">
         <tr> 
@@ -12,15 +15,20 @@
         </tr>
       </thead>
       <tbody>
-       <tr  appHoverHighlight *ngFor="let stud of allStudents" [ngClass]="{'bg-danger':stud.studTotalMarks<70}">
-           <!--  <tr  *ngFor="let stud of allStudents" [ngStyle]="{'color':getMarkColor(stud.studTotalMarks)}">-->
+        <tr *ngFor="let stud of allStudents |filterList:filterData" >
+       <!-- <tr  appHoverHighlight *ngFor="let stud of allStudents|filterList:filterData" [ngClass]="{'bg-danger':stud.studTotalMarks<70}">
+            <tr  *ngFor="let stud of allStudents" [ngStyle]="{'color':getMarkColor(stud.studTotalMarks)}">-->
             <td>{{stud.id}}</td>
             <td>{{stud.studentName | uppercase}}</td>
             <td>{{stud.studTotalMarks |currency :'INR':'symbol'}}</td>
-            <td>{{stud.studTotalMarks/500 |percent}}</td>
+            <td>{{stud.studTotalMarks/100 |percent}}</td>
             <td>{{stud.studentDOB | date : 'mediumDate' |lowercase}}</td>
             <td>{{stud.studGender}}</td>
        </tr>
       </tbody>
     </table>
+    <button type="button" class="btn btn-success" 
+    (click)="addTestStudent()"
+    >Add Test Student</button>
+</div>
 </div>
