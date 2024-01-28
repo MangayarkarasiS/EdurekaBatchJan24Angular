@@ -15,8 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let stud of allStudents |filterList:filterData" >
-       <!-- <tr  appHoverHighlight *ngFor="let stud of allStudents|filterList:filterData" [ngClass]="{'bg-danger':stud.studTotalMarks<70}">
+        <tr *ngFor="let stud of allStudents">
+          <!-- <tr *ngFor="let stud of allStudents |filterList:filterData" >
+       <tr  appHoverHighlight *ngFor="let stud of allStudents|filterList:filterData" [ngClass]="{'bg-danger':stud.studTotalMarks<70}">
             <tr  *ngFor="let stud of allStudents" [ngStyle]="{'color':getMarkColor(stud.studTotalMarks)}">-->
             <td>{{stud.id}}</td>
             <td>{{stud.studentName | uppercase}}</td>

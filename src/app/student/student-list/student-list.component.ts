@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student.model';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -9,7 +10,8 @@ import { Student } from '../student.model';
 export class StudentListComponent implements OnInit {
 
   filterData:string='';
-  allStudents:Student[]=[{
+  allStudents:Student[]=[];
+  /*allStudents:Student[]=[{
     id:101,
     studentName:'Banu Roy',
     studTotalMarks:100,
@@ -29,11 +31,19 @@ export class StudentListComponent implements OnInit {
     studTotalMarks:70,
     studentDOB:new Date(7,5,2023),
     studGender:'Male'
-  }];
-  constructor() { }
+  }];*/
+   
+  
+  constructor(private studentService:StudentService) {
+   // this.studentService=new StudentService();
+   }
 
   ngOnInit(): void {
+    this.allStudents=this.studentService.getAllStudents();
   }
+
+
+
   getMarkColor(mark:number){
     if(mark>90)
     return 'green';

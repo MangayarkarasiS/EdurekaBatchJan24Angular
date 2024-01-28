@@ -9,7 +9,7 @@ export class FilterListPipe implements PipeTransform {
   transform(value: Student[], ...args: string[]): Student[] {
      if(value.length==0||args[0]=='')return value;
      
-    return value.filter((eachStudent)=>eachStudent.studentName.toLowerCase()==args[0].toLowerCase());
+    return value.filter((eachStudent)=>eachStudent.studGender.toLowerCase()==args[0].toLowerCase());
     
   }
 
